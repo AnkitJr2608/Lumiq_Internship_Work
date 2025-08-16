@@ -1,0 +1,39 @@
+  1.  select (count(product_id)/(select count(*) from items)*100)
+       from items 
+       where category='books' and order_day between 2021-06-01 and 2021=06-30 and product_id not in (select product_id from orders)
+
+
+
+2. Assumption:- all values in customer_id column is not unique.
+ 
+    select count(customer_id) - count(distinct customer_id)
+    from orders
+    where order_day between 2021-01-01 and 2021-03-31
+
+
+
+3.   select items.product_name, inventory.product_id
+      from items, inventory,orders
+      where items.product_id = inventory.product_id
+             and inventory_city in ('bangalore', 'mumbai', 'delhi')
+      and orders.product_id=items.product_id and (orders.quantity>3 or orders.quantity=3) and 
+      (orders.order_day between 2022-02-28 and 2022-02-14)
+
+
+      
+4.    select items.product name
+       from items, orders 
+       where items.product_id=orders.product_id and 
+       items.price*orders.quantity as total_price>500
+       and (orders.order_day between 2020-01-01 and 2020-12-31)
+       order by total_price
+       limit 0,10
+
+
+5.    select order.order_id
+       from orders, items 
+       where orders.product_id=items.product_id
+       and items.category='books'
+       and (orders.quantity=2 or orders.quantity>2)
+       and items.price*orders.quantity<500
+       and (orders.order_day between 2021-06-01 and 2021-06-30)

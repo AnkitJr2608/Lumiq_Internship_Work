@@ -1,0 +1,1115 @@
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 ~
+$ cd /d
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d
+$ cd git
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git
+$ cd testing
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ ls
+test.txt
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    README.md
+
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git restore --staged <README.md>
+bash: syntax error near unexpected token `newline'
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git revert
+usage: git revert [<options>] <commit-ish>...
+   or: git revert <subcommand>
+
+    --quit                end revert or cherry-pick sequence
+    --continue            resume revert or cherry-pick sequence
+    --abort               cancel revert or cherry-pick sequence
+    --skip                skip current commit and continue
+    --cleanup <mode>      how to strip spaces and #comments from message
+    -n, --no-commit       don't automatically commit
+    -e, --edit            edit the commit message
+    -s, --signoff         add a Signed-off-by trailer
+    -m, --mainline <parent-number>
+                          select mainline parent
+    --rerere-autoupdate   update the index with reused conflict resolution if possible
+    --strategy <strategy>
+                          merge strategy
+    -X, --strategy-option <option>
+                          option for merge strategy
+    -S, --gpg-sign[=<key-id>]
+                          GPG sign commit
+
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git log
+commit 021629df0f5dcf505055d5a2630057113779d5c9 (HEAD -> main, origin/main, origin/HEAD)
+Merge: 32fdb88 080d3ce
+Author: AnkitJr2608 <ankitkusingh22@gmail.com>
+Date:   Mon Mar 7 19:20:12 2022 +0530
+
+    merge conflict solved
+
+commit 32fdb88b6c468665ff252861e31724f2dc413687
+Author: AnkitJr2608 <ankitkusingh22@gmail.com>
+Date:   Mon Mar 7 19:10:49 2022 +0530
+
+     main branch commit 2
+
+commit 080d3cef74e7e8fbecdf5c4cf4691a93f0f7dee7 (issue1)
+Author: AnkitJr2608 <ankitkusingh22@gmail.com>
+Date:   Mon Mar 7 19:05:31 2022 +0530
+
+    issue 2 branch
+
+commit 88f4b1c6f0e38b6a92e3c61396c9b07c352ebab1
+Author: AnkitJr2608 <ankitkusingh22@gmail.com>
+Date:   Mon Mar 7 19:04:06 2022 +0530
+uit
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git revert 32fdb88b6c468665ff252861e31724f2dc413687
+error: your local changes would be overwritten by revert.
+hint: commit your changes or stash them to proceed.
+fatal: revert failed
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git commit -m "reverted" test.txt
+fatal: Unable to create 'D:/Git/Testing/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    README.md
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    test.txt
+
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git clone 021629df0f5dcf505055d5a2630057113779d5c9
+fatal: repository '021629df0f5dcf505055d5a2630057113779d5c9' does not exist
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git clone https://github.com/AnkitJr2608/Testing.git
+Cloning into 'Testing'...
+remote: Enumerating objects: 18, done.
+remote: Counting objects: 100% (18/18), done.
+remote: Compressing objects: 100% (10/10), done.
+remote: Total 18 (delta 1), reused 15 (delta 1), pack-reused 0
+Receiving objects: 100% (18/18), done.
+Resolving deltas: 100% (1/1), done.
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    README.md
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    test.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Testing/
+
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git add .
+fatal: Unable to create 'D:/Git/Testing/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ ^C
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ rm -f .git/index.lock
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git add .
+warning: adding embedded git repository: Testing
+hint: You've added another git repository inside your current repository.
+hint: Clones of the outer repository will not contain the contents of
+hint: the embedded repository and will not know how to obtain it.
+hint: If you meant to add a submodule, use:
+hint:
+hint:   git submodule add <url> Testing
+hint:
+hint: If you added this path by mistake, you can remove it from the
+hint: index with:
+hint:
+hint:   git rm --cached Testing
+hint:
+hint: See "git help submodule" for more information.
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    README.md
+        new file:   Testing
+        deleted:    test.txt
+
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ ls
+Testing/
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ ls
+Testing/
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    README.md
+        new file:   Testing
+        deleted:    test.txt
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    Testing
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        README.md
+        test.txt
+
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git add .
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git commit
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git commit -m "cloned from github again" test.txt
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git log
+commit 021629df0f5dcf505055d5a2630057113779d5c9 (HEAD -> main, origin/main, origin/HEAD)
+Merge: 32fdb88 080d3ce
+Author: AnkitJr2608 <ankitkusingh22@gmail.com>
+Date:   Mon Mar 7 19:20:12 2022 +0530
+
+    merge conflict solved
+
+commit 32fdb88b6c468665ff252861e31724f2dc413687
+Author: AnkitJr2608 <ankitkusingh22@gmail.com>
+Date:   Mon Mar 7 19:10:49 2022 +0530
+
+     main branch commit 2
+
+commit 080d3cef74e7e8fbecdf5c4cf4691a93f0f7dee7 (issue1)
+Author: AnkitJr2608 <ankitkusingh22@gmail.com>
+Date:   Mon Mar 7 19:05:31 2022 +0530
+
+    issue 2 branch
+
+commit 88f4b1c6f0e38b6a92e3c61396c9b07c352ebab1
+Author: AnkitJr2608 <ankitkusingh22@gmail.com>
+Date:   Mon Mar 7 19:04:06 2022 +0530
+
+    issue 1 branch
+
+commit fed7ad7a036da136bd3d76faa26c0980e0d1a40b
+Author: AnkitJr2608 <ankitkusingh22@gmail.com>
+Date:   Sun Mar 6 13:17:41 2022 +0530
+
+    first commit
+
+commit 9ae6a35f25b4194472323f042102fb9b3a7638f2
+Author: AnkitJr2608 <99964220+AnkitJr2608@users.noreply.github.com>
+Date:   Sun Mar 6 13:09:03 2022 +0530
+
+    Initial commit
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git revert 88f4b1c6f0e38b6a92e3c61396c9b07c352ebab1
+Auto-merging test.txt
+CONFLICT (content): Merge conflict in test.txt
+error: could not revert 88f4b1c... issue 1 branch
+hint: After resolving the conflicts, mark them with
+hint: "git add/rm <pathspec>", then run
+hint: "git revert --continue".
+hint: You can instead skip this commit with "git revert --skip".
+hint: To abort and get back to the state before "git revert",
+hint: run "git revert --abort".
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main|REVERTING)
+$ git add .
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main|REVERTING)
+$ git revert --quit
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git commit -m "merge conflict reserved 2"
+[main f07d7b9] merge conflict reserved 2
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git log
+commit f07d7b93faecfa7564fea9527bc931472241aa2c (HEAD -> main)
+Author: AnkitJr2608 <ankitkusingh22@gmail.com>
+Date:   Mon Mar 7 22:49:42 2022 +0530
+
+    merge conflict reserved 2
+
+commit 021629df0f5dcf505055d5a2630057113779d5c9 (origin/main, origin/HEAD)
+Merge: 32fdb88 080d3ce
+Author: AnkitJr2608 <ankitkusingh22@gmail.com>
+Date:   Mon Mar 7 19:20:12 2022 +0530
+
+    merge conflict solved
+
+commit 32fdb88b6c468665ff252861e31724f2dc413687
+Author: AnkitJr2608 <ankitkusingh22@gmail.com>
+Date:   Mon Mar 7 19:10:49 2022 +0530
+
+     main branch commit 2
+
+commit 080d3cef74e7e8fbecdf5c4cf4691a93f0f7dee7 (issue1)
+Author: AnkitJr2608 <ankitkusingh22@gmail.com>
+Date:   Mon Mar 7 19:05:31 2022 +0530
+
+    issue 2 branch
+
+commit 88f4b1c6f0e38b6a92e3c61396c9b07c352ebab1
+Author: AnkitJr2608 <ankitkusingh22@gmail.com>
+Date:   Mon Mar 7 19:04:06 2022 +0530
+
+    issue 1 branch
+
+commit fed7ad7a036da136bd3d76faa26c0980e0d1a40b
+Author: AnkitJr2608 <ankitkusingh22@gmail.com>
+Date:   Sun Mar 6 13:17:41 2022 +0530
+
+    first commit
+
+commit 9ae6a35f25b4194472323f042102fb9b3a7638f2
+Author: AnkitJr2608 <99964220+AnkitJr2608@users.noreply.github.com>
+Date:   Sun Mar 6 13:09:03 2022 +0530
+
+    Initial commit
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git revert  88f4b1c6f0e38b6a92e3c61396c9b07c352ebab1
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git revert  32fdb88b6c468665ff252861e31724f2dc413687
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git revert fed7ad7a036da136bd3d76faa26c0980e0d1a40b
+[main b5909ed] Revert "first commit"
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 test.txt
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git push -u origin main
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (5/5), 564 bytes | 141.00 KiB/s, done.
+Total 5 (delta 0), reused 1 (delta 0), pack-reused 0
+To https://github.com/AnkitJr2608/Testing.git
+   021629d..b5909ed  main -> main
+branch 'main' set up to track 'origin/main'.
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git add .
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git revert 9ae6a35f25b4194472323f042102fb9b3a7638f2
+hint: Waiting for your editor to close the file... error: There was a problem with the editor 'vi'.
+Please supply the message using either -m or -F option.
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git revert 88f4b1c6f0e38b6a92e3c61396c9b07c352ebab1
+error: your local changes would be overwritten by revert.
+hint: commit your changes or stash them to proceed.
+fatal: revert failed
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git stash
+Saved working directory and index state WIP on main: b5909ed Revert "first commit"
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git revert 88f4b1c6f0e38b6a92e3c61396c9b07c352ebab1
+CONFLICT (modify/delete): test.txt deleted in HEAD and modified in parent of 88f4b1c (issue 1 branch).  Version parent of 88f4b1c (issue 1 branch) of test.txt left in tree.
+error: could not revert 88f4b1c... issue 1 branch
+hint: After resolving the conflicts, mark them with
+hint: "git add/rm <pathspec>", then run
+hint: "git revert --continue".
+hint: You can instead skip this commit with "git revert --skip".
+hint: To abort and get back to the state before "git revert",
+hint: run "git revert --abort".
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main|REVERTING)
+$ git branch -v
+  issue1 080d3ce [behind 4] issue 2 branch
+* main   b5909ed Revert "first commit"
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main|REVERTING)
+$ git branch
+  issue1
+* main
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main|REVERTING)
+$ git add .
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main|REVERTING)
+$ git revert --continue
+hint: Waiting for your editor to close the file... error: There was a problem with the editor 'vi'.
+Please supply the message using either -m or -F option.
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main|REVERTING)
+$ git revert --skip
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git log
+commit b5909ed7be7f6de7a5d53805f67a9c8a7b445c31 (HEAD -> main, origin/main, origin/HEAD)
+Author: AnkitJr2608 <ankitkusingh22@gmail.com>
+Date:   Mon Mar 7 22:51:40 2022 +0530
+
+    Revert "first commit"
+
+    This reverts commit fed7ad7a036da136bd3d76faa26c0980e0d1a40b.
+
+commit f07d7b93faecfa7564fea9527bc931472241aa2c
+Author: AnkitJr2608 <ankitkusingh22@gmail.com>
+Date:   Mon Mar 7 22:49:42 2022 +0530
+
+    merge conflict reserved 2
+
+commit 021629df0f5dcf505055d5a2630057113779d5c9
+Merge: 32fdb88 080d3ce
+Author: AnkitJr2608 <ankitkusingh22@gmail.com>
+Date:   Mon Mar 7 19:20:12 2022 +0530
+
+    merge conflict solved
+
+commit 32fdb88b6c468665ff252861e31724f2dc413687
+Author: AnkitJr2608 <ankitkusingh22@gmail.com>
+Date:   Mon Mar 7 19:10:49 2022 +0530
+
+     main branch commit 2
+
+commit 080d3cef74e7e8fbecdf5c4cf4691a93f0f7dee7 (issue1)
+Author: AnkitJr2608 <ankitkusingh22@gmail.com>
+Date:   Mon Mar 7 19:05:31 2022 +0530
+
+    issue 2 branch
+
+commit 88f4b1c6f0e38b6a92e3c61396c9b07c352ebab1
+Author: AnkitJr2608 <ankitkusingh22@gmail.com>
+Date:   Mon Mar 7 19:04:06 2022 +0530
+
+    issue 1 branch
+
+commit fed7ad7a036da136bd3d76faa26c0980e0d1a40b
+Author: AnkitJr2608 <ankitkusingh22@gmail.com>
+Date:   Sun Mar 6 13:17:41 2022 +0530
+
+    first commit
+
+commit 9ae6a35f25b4194472323f042102fb9b3a7638f2
+Author: AnkitJr2608 <99964220+AnkitJr2608@users.noreply.github.com>
+Date:   Sun Mar 6 13:09:03 2022 +0530
+
+    Initial commit
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ ls
+README.md
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git revert  88f4b1c6f0e38b6a92e3c61396c9b07c352ebab1
+CONFLICT (modify/delete): test.txt deleted in HEAD and modified in parent of 88f4b1c (issue 1 branch).  Version parent of 88f4b1c (issue 1 branch) of test.txt left in tree.
+error: could not revert 88f4b1c... issue 1 branch
+hint: After resolving the conflicts, mark them with
+hint: "git add/rm <pathspec>", then run
+hint: "git revert --continue".
+hint: You can instead skip this commit with "git revert --skip".
+hint: To abort and get back to the state before "git revert",
+hint: run "git revert --abort".
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main|REVERTING)
+$ git revert --skip
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git revert 88f4b1c6f0e38b6a92e3c61396c9b07c352ebab1
+CONFLICT (modify/delete): test.txt deleted in HEAD and modified in parent of 88f4b1c (issue 1 branch).  Version parent of 88f4b1c (issue 1 branch) of test.txt left in tree.
+error: could not revert 88f4b1c... issue 1 branch
+hint: After resolving the conflicts, mark them with
+hint: "git add/rm <pathspec>", then run
+hint: "git revert --continue".
+hint: You can instead skip this commit with "git revert --skip".
+hint: To abort and get back to the state before "git revert",
+hint: run "git revert --abort".
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main|REVERTING)
+$ git add .
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main|REVERTING)
+$ git commit
+hint: Waiting for your editor to close the file... error: There was a problem with the editor 'vi'.
+Please supply the message using either -m or -F option.
+
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main|REVERTING)
+$
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main|REVERTING)
+$ git commit "revert 2" test.txt
+error: pathspec 'revert 2' did not match any file(s) known to git
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main|REVERTING)
+$ git commit -m "revert 2" test.txt
+[main cfad5cf] revert 2
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test.txt
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git push -u origin main
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 296 bytes | 148.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/AnkitJr2608/Testing.git
+   b5909ed..cfad5cf  main -> main
+branch 'main' set up to track 'origin/main'.
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git revert -n 021629df0f5dcf505055d5a2630057113779d5c9
+error: commit 021629df0f5dcf505055d5a2630057113779d5c9 is a merge but no -m option was given.
+fatal: revert failed
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git revert -n 080d3cef74e7e8fbecdf5c4cf4691a93f0f7dee7
+Auto-merging test.txt
+CONFLICT (content): Merge conflict in test.txt
+error: could not revert 080d3ce... issue 2 branch
+hint: after resolving the conflicts, mark the corrected paths
+hint: with 'git add <paths>' or 'git rm <paths>'
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main|REVERTING)
+$ git add .
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main|REVERTING)
+$ git commit -m "revert 3" test.txt
+[main 7c3d31d] revert 3
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git push -u origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 296 bytes | 74.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/AnkitJr2608/Testing.git
+   cfad5cf..7c3d31d  main -> main
+branch 'main' set up to track 'origin/main'.
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git checkout -b branch1
+Switched to a new branch 'branch1'
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (branch1)
+$ git add .
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (branch1)
+$ git commit -m "Ankit" test.txt
+[branch1 e0b268c] Ankit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (branch1)
+$ git push -u origin
+fatal: The current branch branch1 has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin branch1
+
+br
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (branch1)
+$ git psuh -u origin branch1
+git: 'psuh' is not a git command. See 'git --help'.
+
+The most similar command is
+        push
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (branch1)
+$ git push -u origin branc1
+error: src refspec branc1 does not match any
+error: failed to push some refs to 'https://github.com/AnkitJr2608/Testing.git'
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (branch1)
+$ git push -u origin branch1
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 280 bytes | 93.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'branch1' on GitHub by visiting:
+remote:      https://github.com/AnkitJr2608/Testing/pull/new/branch1
+remote:
+To https://github.com/AnkitJr2608/Testing.git
+ * [new branch]      branch1 -> branch1
+branch 'branch1' set up to track 'origin/branch1'.
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (branch1)
+$ git branch -m branch2
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (branch2)
+$ git add test.txt
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (branch2)
+$ git commit -m "Kumar" test.txt
+[branch2 aa5b5eb] Kumar
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (branch2)
+$ git checkout -b branch3
+Switched to a new branch 'branch3'
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (branch3)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git checkout -b branch4
+Switched to a new branch 'branch4'
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (branch4)
+$ git add .
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (branch4)
+$ git commit -m "Singh" test.txt
+[branch4 27ca1c4] Singh
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (branch4)
+$ git merge
+fatal: No remote for the current branch.
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (branch4)
+$ git merge
+fatal: No remote for the current branch.
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (branch4)
+$ git merge branch1
+merge: branch1 - not something we can merge
+
+Did you mean this?
+        origin/branch1
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (branch4)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git merge branch1
+merge: branch1 - not something we can merge
+
+Did you mean this?
+        origin/branch1
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git merge origin/branch1
+Updating 7c3d31d..e0b268c
+Fast-forward
+ test.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git merge origin/branch4
+merge: origin/branch4 - not something we can merge
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git merge main/branch4
+merge: main/branch4 - not something we can merge
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git log
+commit e0b268ce23cf07e8e35aae10b7d0c2ba92b2153a (HEAD -> main, origin/branch1)
+Author: AnkitJr2608 <ankitkusingh22@gmail.com>
+Date:   Mon Mar 7 23:29:57 2022 +0530
+
+    Ankit
+
+commit 7c3d31d9cb84910344b5e55508e7b609f73b9770 (origin/main, origin/HEAD)
+Author: AnkitJr2608 <ankitkusingh22@gmail.com>
+Date:   Mon Mar 7 23:20:02 2022 +0530
+
+    revert 3
+
+commit cfad5cf93bbbd895aee3d3e773ddb44243ddc5df
+Author: AnkitJr2608 <ankitkusingh22@gmail.com>
+Date:   Mon Mar 7 23:15:48 2022 +0530
+
+    revert 2
+
+commit b5909ed7be7f6de7a5d53805f67a9c8a7b445c31
+Author: AnkitJr2608 <ankitkusingh22@gmail.com>
+Date:   Mon Mar 7 22:51:40 2022 +0530
+
+    Revert "first commit"
+
+    This reverts commit fed7ad7a036da136bd3d76faa26c0980e0d1a40b.
+
+commit f07d7b93faecfa7564fea9527bc931472241aa2c
+Author: AnkitJr2608 <ankitkusingh22@gmail.com>
+Date:   Mon Mar 7 22:49:42 2022 +0530
+
+    merge conflict reserved 2
+
+commit 021629df0f5dcf505055d5a2630057113779d5c9
+Merge: 32fdb88 080d3ce
+Author: AnkitJr2608 <ankitkusingh22@gmail.com>
+Date:   Mon Mar 7 19:20:12 2022 +0530
+
+    merge conflict solved
+
+commit 32fdb88b6c468665ff252861e31724f2dc413687
+Author: AnkitJr2608 <ankitkusingh22@gmail.com>
+Date:   Mon Mar 7 19:10:49 2022 +0530
+
+     main branch commit 2
+
+commit 080d3cef74e7e8fbecdf5c4cf4691a93f0f7dee7 (issue1)
+Author: AnkitJr2608 <ankitkusingh22@gmail.com>
+Date:   Mon Mar 7 19:05:31 2022 +0530
+
+    issue 2 branch
+
+commit 88f4b1c6f0e38b6a92e3c61396c9b07c352ebab1
+Author: AnkitJr2608 <ankitkusingh22@gmail.com>
+Date:   Mon Mar 7 19:04:06 2022 +0530
+
+    issue 1 branch
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git revert 7c3d31d9cb84910344b5e55508e7b609f73b9770
+Auto-merging test.txt
+CONFLICT (content): Merge conflict in test.txt
+error: could not revert 7c3d31d... revert 3
+hint: After resolving the conflicts, mark them with
+hint: "git add/rm <pathspec>", then run
+hint: "git revert --continue".
+hint: You can instead skip this commit with "git revert --skip".
+hint: To abort and get back to the state before "git revert",
+hint: run "git revert --abort".
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main|REVERTING)
+$ git add .
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main|REVERTING)
+$ git commit "returned back" test.txt
+error: pathspec 'returned back' did not match any file(s) known to git
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main|REVERTING)
+$ git commit -m "returned back" test.txt
+[main fb972db] returned back
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git branch
+  branch2
+  branch3
+  branch4
+  issue1
+* main
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git checkout branch1
+Switched to a new branch 'branch1'
+branch 'branch1' set up to track 'origin/branch1'.
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (branch1)
+$ git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 2 commits.
+  (use "git push" to publish your local commits)
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git merge branch1
+Already up to date.
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git merge branch4
+Auto-merging test.txt
+CONFLICT (content): Merge conflict in test.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main|MERGING)
+$ git add .
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main|MERGING)
+$ git commit -m "merged this is a file and Singh"
+[main 01b9abd] merged this is a file and Singh
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git checkout branch11
+error: pathspec 'branch11' did not match any file(s) known to git
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git checkout -b branch11
+Switched to a new branch 'branch11'
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (branch11)
+$ git checkout main
+Switched to branch 'main'
+M       test.txt
+Your branch is ahead of 'origin/main' by 4 commits.
+  (use "git push" to publish your local commits)
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git checkout -b branch22
+Switched to a new branch 'branch22'
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (branch22)
+$ git checkout main
+Switched to branch 'main'
+M       test.txt
+Your branch is ahead of 'origin/main' by 4 commits.
+  (use "git push" to publish your local commits)
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git merge branch22
+Already up to date.
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git merge branch11
+Already up to date.
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git checkout branch11
+Switched to branch 'branch11'
+M       test.txt
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (branch11)
+$ git checkout branch22
+Switched to branch 'branch22'
+M       test.txt
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (branch22)
+$ git checkout main
+Switched to branch 'main'
+M       test.txt
+Your branch is ahead of 'origin/main' by 4 commits.
+  (use "git push" to publish your local commits)
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 4 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   test.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git add .
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git commit -m "changed name to Ankit" test.txt
+[main 46cd4de] changed name to Ankit
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git push -u origin main
+Enumerating objects: 14, done.
+Counting objects: 100% (14/14), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (10/10), 1.00 KiB | 93.00 KiB/s, done.
+Total 10 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/AnkitJr2608/Testing.git
+   7c3d31d..46cd4de  main -> main
+branch 'main' set up to track 'origin/main'.
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git branch
+  branch1
+  branch11
+  branch2
+  branch22
+  branch3
+  branch4
+  issue1
+* main
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git branch -
+fatal: '-' is not a valid branch name
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git branch -b issue2
+error: unknown switch `b'
+usage: git branch [<options>] [-r | -a] [--merged] [--no-merged]
+   or: git branch [<options>] [-l] [-f] <branch-name> [<start-point>]
+   or: git branch [<options>] [-r] (-d | -D) <branch-name>...
+   or: git branch [<options>] (-m | -M) [<old-branch>] <new-branch>
+   or: git branch [<options>] (-c | -C) [<old-branch>] <new-branch>
+   or: git branch [<options>] [-r | -a] [--points-at]
+   or: git branch [<options>] [-r | -a] [--format]
+
+Generic options
+    -v, --verbose         show hash and subject, give twice for upstream branch
+    -q, --quiet           suppress informational messages
+    -t, --track[=(direct|inherit)]
+                          set branch tracking configuration
+    -u, --set-upstream-to <upstream>
+                          change the upstream info
+    --unset-upstream      unset the upstream info
+    --color[=<when>]      use colored output
+    -r, --remotes         act on remote-tracking branches
+    --contains <commit>   print only branches that contain the commit
+    --no-contains <commit>
+                          print only branches that don't contain the commit
+    --abbrev[=<n>]        use <n> digits to display object names
+
+Specific git-branch actions:
+    -a, --all             list both remote-tracking and local branches
+    -d, --delete          delete fully merged branch
+    -D                    delete branch (even if not merged)
+    -m, --move            move/rename a branch and its reflog
+    -M                    move/rename a branch, even if target exists
+    -c, --copy            copy a branch and its reflog
+    -C                    copy a branch, even if target exists
+    -l, --list            list branch names
+    --show-current        show current branch name
+    --create-reflog       create the branch's reflog
+    --edit-description    edit the description for the branch
+    -f, --force           force creation, move/rename, deletion
+    --merged <commit>     print only branches that are merged
+    --no-merged <commit>  print only branches that are not merged
+    --column[=<style>]    list branches in columns
+    --sort <key>          field name to sort on
+    --points-at <object>  print only branches of the object
+    -i, --ignore-case     sorting and filtering are case insensitive
+    --format <format>     format to use for the output
+
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git branch -d branch11
+Deleted branch branch11 (was 01b9abd).
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git branch -d branch22
+Deleted branch branch22 (was 01b9abd).
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git checkout -b branch11
+Switched to a new branch 'branch11'
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (branch11)
+$ git status
+On branch branch11
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   test.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (branch11)
+$ git add .
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (branch11)
+$ git commit -m "added Kumar" test.txt
+[branch11 1c4ee28] added Kumar
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (branch11)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git checkout -b branch22
+Switched to a new branch 'branch22'
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (branch22)
+$ git status
+On branch branch22
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   test.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (branch22)
+$ git add .
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (branch22)
+$ git commit -m "added Singh" test.txt
+[branch22 637be27] added Singh
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (branch22)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git merge branch11
+Updating 46cd4de..1c4ee28
+Fast-forward
+ test.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git merge branch22
+Auto-merging test.txt
+CONFLICT (content): Merge conflict in test.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main|MERGING)
+$ git add .
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main|MERGING)
+$ git commit "branch11 and branch22 merged"
+fatal: cannot do a partial commit during a merge.
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main|MERGING)
+$ git commit -m "branch11 and branch22 merged"
+[main b8cd459] branch11 and branch22 merged
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 3 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+ANKIT SINGH@DESKTOP-OBQS0U4 MINGW64 /d/git/testing (main)
+$ git push -u origin main
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (9/9), 771 bytes | 128.00 KiB/s, done.
+Total 9 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/AnkitJr2608/Testing.git
+   46cd4de..b8cd459  main -> main
+branch 'main' set up to track 'origin/main'.
+
+AN

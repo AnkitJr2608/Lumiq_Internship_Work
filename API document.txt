@@ -1,0 +1,39 @@
+Data Interaction
+
+
+Api Endpoint: - jdbc:mysql://localhost:3306/UserProfile?useSSL=false/UserProfile_data
+
+
+Request Header 
+For creating a table:-  jdbc:mysql://localhost:3306/UserProfile?useSSL=false/UserProfile_data?CREATE TABLE `userprofile`.`userprofile_data` (`ID` INT NOT NULL, `Name` VARCHAR(45) NOT NULL, `Age` VARCHAR(45) NOT NULL, `email` VARCHAR(45) NOT NULL, `Gender` VARCHAR(45) NOT NULL, `Mobile_Number` BIGINT(10) NOT NULL,  `Birthday` DATE NOT NULL, `City` VARCHAR(45) NOT NULL, `State` VARCHAR(45) NOT NULL, `Country` VARCHAR(45) NOT NULL, `Address1` VARCHAR(45) NOT NULL, `Address2` VARCHAR(45) NOT NULL, PRIMARY KEY (`ID`))
+
+For adding user:-  jdbc:mysql://localhost:3306/UserProfile?useSSL=false/UserProfile_data?Insert into UserProfile_data values('1','ankit','19','ankitkusingh@gmail.com','male','6370827635','1999-08-26','paradeep','odisha','india','tarineegada','bijayachandrapur')
+
+For updating user:-  jdbc:mysql://localhost:3306/UserProfile?useSSL=false/UserProfile_data?Update UserProfile_data set age=22 where id= 1
+
+
+Response Body
+For creating a table:- A table for userprofile gets created with response output as "Table created successfully"
+
+For adding a user in the table:- It asks for all the details along with their validation checks and if everything gets validated successfully then it enters the user values in the table along with the success message
+"User successfully created."
+
+For updating a user in the table:- It asks for the user ID and the attribute and its value to be changed. If the ID is present then the attribute gets changed and the success message displays as "User successfully updated". If the ID entered is 
+   not present then a error message displays as "User not found"
+
+
+
+URL Parameters:
+
+1.   ID :- Determines the unique id of a user and is the primary key of the table. Type :- INTEGER    Value:- NOTNULL
+2.   NAME:-  Represents the name of the user.     Type :-  VARCHAR(45)       Value:- NOTNULL
+3.   AGE :-    Represents the age of the user.        Type :-  INTEGER          Value:-  NOTNULL
+4.   EMAIL:-  Contains the email of the user.         Type:-   VARCHAR(45)    Value:- NOTNULL
+5.   GENDER:-   Represents the gender of the user.         Type:- INTEGER          Value:- NOTNULL
+6.   MOBILE_NUMBER:-   Shows the mobile number of the user.       Tpye:- INTEGER            Value:- NOTNULL
+7.   BIRTHDAY:-     Show the birth-date of the user.           Type:- DATE             Value:- NOTNULL 
+8.   CITY:-     Contains the name of the city user is living in            Type:-  VARCHAR(45)             Value:-  NOTNULL
+9.   STATE:-    Represents the state where user us present             Type:- VARCHAR(45)            Value:- NOTNULL
+10. COUNTRY:-    Represents the country of the user                  Type:-  VARCHAR(45)            Value:- NOTNULL
+11. ADDRESS1:-   Represents the current address of the user               Type:- VARCHAR(45)          Value:- NOTNULL
+12. ADDRESS2:-  Represents the home address of the user              TYPE:- VARCHAR(45)         Value:- NOTNULL

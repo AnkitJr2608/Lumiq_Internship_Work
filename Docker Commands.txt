@@ -1,0 +1,102 @@
+docker run -d -p 9000:80 httpd
+
+docker exec -it apache_server /bin/sh
+
+docker image ls
+docker volume ls
+
+docker pull httpd
+
+docker exec -it (container ID)  bash
+
+
+
+
+
+Microsoft Windows [Version 10.0.22000.613]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\ANKIT SINGH>cd desktop/docker
+
+C:\Users\ANKIT SINGH\Desktop\Docker>docker run -d ankitimage:2.0
+ace14af9386cefb851ac6c80eb20d0e9427aa233914aac6bdc3ec2ad7f616db3
+
+C:\Users\ANKIT SINGH\Desktop\Docker>docker ps -a
+CONTAINER ID   IMAGE            COMMAND                  CREATED          STATUS                      PORTS                   NAMES
+ace14af9386c   ankitimage:2.0   "echo 'Hello World, …"   51 seconds ago   Exited (0) 49 seconds ago                           condescending_wilbur
+9009294f844d   httpd            "httpd-foreground"       39 hours ago     Up 39 hours                 0.0.0.0:12000->80/tcp   Apache_server4
+c4226c3c04d0   httpd            "httpd-foreground"       10 days ago      Up 4 days                   0.0.0.0:9000->80/tcp    Apache_server
+
+C:\Users\ANKIT SINGH\Desktop\Docker>docker run -d -p 13000:80 ankitimage:2.0
+5a68a767e588d38e3c1f7081834bf7c8ee9c72f5a7ad67fc172be41b0558d6ca
+
+C:\Users\ANKIT SINGH\Desktop\Docker>docker run -d --name newimagecontainer ankitimage:2.0
+0aaa5f92acaaae1fa91c830ed4a76d463f7354c331b908b20514994f544fe683
+
+C:\Users\ANKIT SINGH\Desktop\Docker>docker build -t ankitimage:3.0 .
+[+] Building 0.4s (6/6) FINISHED
+ => [internal] load build definition from Dockerfile                                                               0.0s
+ => => transferring dockerfile: 153B                                                                               0.0s
+ => [internal] load .dockerignore                                                                                  0.0s
+ => => transferring context: 2B                                                                                    0.0s
+ => [internal] load metadata for docker.io/library/httpd:latest                                                    0.0s
+ => [1/2] FROM docker.io/library/httpd                                                                             0.0s
+ => CACHED [2/2] RUN apt-get update                                                                                0.0s
+ => exporting to image                                                                                             0.0s
+ => => exporting layers                                                                                            0.0s
+ => => writing image sha256:9b256178957aa3f9f0f345a558feee8020a5acb4f1209bdeb6c2421b3d4562e6                       0.0s
+ => => naming to docker.io/library/ankitimage:3.0                                                                  0.0s
+
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
+
+C:\Users\ANKIT SINGH\Desktop\Docker>docker run -d --name newcontainer2 ankitimage:3.0
+docker: Error response from daemon: No command specified.
+See 'docker run --help'.
+
+C:\Users\ANKIT SINGH\Desktop\Docker>docker pull repository:2
+Error response from daemon: pull access denied for repository, repository does not exist or may require 'docker login': denied: requested access to the resource is denied
+
+C:\Users\ANKIT SINGH\Desktop\Docker>docker run -d -p 5000:5000 --restart always --name registry registry:2
+Unable to find image 'registry:2' locally
+2: Pulling from library/registry
+df9b9388f04a: Pull complete
+52dc419b0ee2: Pull complete
+b6846b9db566: Pull complete
+b0a23bbf973d: Pull complete
+c50f110701a7: Pull complete
+Digest: sha256:dc3cdf6d35677b54288fe9f04c34f59e85463ea7510c2a9703195b63187a7487
+Status: Downloaded newer image for registry:2
+16e4b2d6df0bf7a2230a0e058fecd7293b91ae6499b2916fbea88379904ebdb5
+
+C:\Users\ANKIT SINGH\Desktop\Docker>docker tag ankitimage:2.0 localhost:5000/ankitimage1
+
+C:\Users\ANKIT SINGH\Desktop\Docker>docker images
+REPOSITORY                   TAG       IMAGE ID       CREATED          SIZE
+ankitimage                   1.0       acead45f85eb   50 minutes ago   161MB
+ankitimage                   2.0       acead45f85eb   50 minutes ago   161MB
+localhost:5000/ankitimage1   latest    acead45f85eb   50 minutes ago   161MB
+ankitimage                   3.0       9b256178957a   50 minutes ago   161MB
+registry                     2         2e200967d166   3 weeks ago      24.2MB
+pihole/pihole                latest    22872f4d204e   3 weeks ago      302MB
+httpd                        latest    118b6abfbf55   4 weeks ago      144MB
+alpine/git                   latest    b337a04161f7   6 weeks ago      38.2MB
+
+C:\Users\ANKIT SINGH\Desktop\Docker>docker push localhost:5000/ankitimage1
+Using default tag: latest
+The push refers to repository [localhost:5000/ankitimage1]
+3d40527fcaef: Pushed
+e825bfd70e3d: Pushed
+59fde81347af: Pushed
+818410a5e575: Pushed
+1bf88df2ac46: Pushed
+608f3a074261: Pushed
+latest: digest: sha256:4fbeec5e5f5cdf51fa9d72738159959729ededa243aa8009e3a2ff248fc47ce5 size: 1577
+
+C:\Users\ANKIT SINGH\Desktop\Docker>docker pull localhost:5000/ankitimage1
+Using default tag: latest
+latest: Pulling from ankitimage1
+Digest: sha256:4fbeec5e5f5cdf51fa9d72738159959729ededa243aa8009e3a2ff248fc47ce5
+Status: Image is up to date for localhost:5000/ankitimage1:latest
+localhost:5000/ankitimage1:latest
+
+C:\Users\ANKIT SINGH\Desktop\Docker>
